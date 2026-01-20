@@ -140,8 +140,8 @@ POUND_PER_FEET_SECOND = POUND / (FEET * SECOND)
 # ============================================================================
 # KINEMATIC VISCOSITY UNITS
 # ============================================================================
-METER_SQR_PER_SECOND = (METER ** 2) / SECOND
-FEET_PER_SQR_SECOND = (FEET ** 2) / SECOND
+METER_SQR_PER_SECOND = (METER**2) / SECOND
+FEET_PER_SQR_SECOND = (FEET**2) / SECOND
 
 # ============================================================================
 # SPECIFIC HEAT CONSTANT

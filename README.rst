@@ -1,4 +1,4 @@
-Isadora – International Standard Atmosphere (ISA) Python Package
+An ICAO 1983 compliant implementation of the the International Standard Atmosphere.
 ===============================================================
 
 Isadora is a lightweight, precise, and Pythonic implementation of the
@@ -14,7 +14,7 @@ who need a simple, reliable ISA implementation in Python.
 Features
 --------
 
-- Compute standard atmosphere properties at any geopotential height.
+- Compute unit-aware standard atmosphere properties at any geopotential height.
 - Derived quantities: Mach number, dynamic pressure, geometric height.
 - Supports multiple unit systems:
   - SI (default)
@@ -32,13 +32,13 @@ Install via `pip`:
 
 .. code-block:: bash
 
-    pip install isadora-atmosphere
+    pip install isadora
 
 Or clone the repository and install locally:
 
 .. code-block:: bash
 
-    git clone https://github.com/yourusername/isadora.git
+    git clone https://github.com/techkaduna/isadora.git
     cd isadora
     pip install .
 
@@ -86,17 +86,7 @@ You can change the unit system globally using `UnitRegistry`:
     print("Temperature (USCS):", atm.temperature)
     print("Pressure (USCS):", atm.pressure)
 
-Converting Values
------------------
-
-The package provides utility functions to convert between SI and user units:
-
-.. code-block:: python
-
-    from isadora.units import to_si, to_user_unit
-
-    speed_si = to_si(100, "SPEED")         # Convert 100 ft/s to m/s
-    speed_user = to_user_unit(speed_si, "SPEED")  # Convert back to user units
+Unit conversion is also allowed as defined in the `mudu` package documentation.
 
 Using Historical ARDC 1959 Data
 -------------------------------
@@ -136,10 +126,11 @@ isadora/
 ├── init.py # Package initialization
 ├── constants.py # Physical constants and MSL properties
 ├── units.py # Unit definitions, registries, and conversion functions
-├── isa.py # Main ISA class implementation
-└── examples.py # Example usage scripts
+├── base.py # Main ISA class implementation
 tests/
 └── ... # Pytest tests
+examples/
+└── ... # usage example script
 
 
 Cheat Sheet
@@ -154,7 +145,7 @@ Importing the Package
 .. code-block:: python
 
     from isadora import ISA
-    from isadora.units import UnitRegistry, to_si, to_user_unit
+    from isadora.units import UnitRegistry
 
 Creating an ISA Atmosphere
 --------------------------
@@ -192,16 +183,6 @@ Switching Unit Systems
     print("Temperature (USCS):", atm_uscs.temperature)
     print("Pressure (USCS):", atm_uscs.pressure)
 
-Unit Conversions
-----------------
-
-.. code-block:: python
-
-    # Convert values to SI
-    speed_m_s = to_si(100, "SPEED")           # Convert 100 ft/s to m/s
-
-    # Convert back to user-selected unit system
-    speed_user = to_user_unit(speed_m_s, "SPEED")
 
 Comparing with Historical ARDC Data
 -----------------------------------
@@ -243,6 +224,6 @@ Follow the PEP8 style guide and include new tests for added functionality.
 Contact
 -------
 
-Author: Your Name  
-GitHub: `https://github.com/yourusername/isadora`  
-Email: `your.email@example.com`
+Author: Kolawole Andrew  
+GitHub: `https://github.com/techkaduna/isadora`  
+Email: `your.andrewolakola@gmail.com`

@@ -2,3 +2,7 @@ SCRATCH
 .mypy_cache
 isadora/__pycache__
 isadora/cli.py
+tests/__pycache__
+.pytest_cache
+docs/*
+pyproject.toml

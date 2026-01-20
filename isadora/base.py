@@ -41,7 +41,6 @@ from .units import _set_SI_standard
 from .units import to_si, to_user_unit
 from .constants import CONSTANTS
 
-
 # Helper function for checking if an altitude is within the limits of an atmospheric layer
 _is_altitude = lambda altitude, limit: (
     True if altitude <= limit[1] and altitude >= limit[0] else False
@@ -214,9 +213,7 @@ class ISATropopause(AtmosphericLayer):
         value : float
             Exponential coefficient.
         """
-        height_diff = (
-            self.parent.altitude - self.base_height
-        ) * 1000
+        height_diff = (self.parent.altitude - self.base_height) * 1000
         num = -1 * CONSTANTS.g / (CONSTANTS.R * self.base_temperature)
         return num * height_diff
 
@@ -269,11 +266,7 @@ class ISATroposphere(AtmosphericLayer):
         """
         temp = (
             self.base_temperature.value
-            + (
-                ISATroposphere.lapse_rate
-                * self.parent.altitude
-                * 1000
-            ).value
+            + (ISATroposphere.lapse_rate * self.parent.altitude * 1000).value
         )
         return to_user_unit(quantity="TEMPERATURE", x=temp + self.parent.offset)
 
@@ -303,7 +296,7 @@ class ISATroposphere(AtmosphericLayer):
             Pressure at the specified altitude.
         """
         exp = -1 * CONSTANTS.g / (CONSTANTS.R * ISATroposphere.lapse_rate)
-        res = CONSTANTS.MSL_PRESSURE * (self.__temperature_ratio ** exp.value)
+        res = CONSTANTS.MSL_PRESSURE * (self.__temperature_ratio**exp.value)
         return to_user_unit(quantity="PRESSURE", x=res.value)
 
 
@@ -359,8 +352,7 @@ class ISAStratosphere(AtmosphericLayer):
         res = (
             self.base_temp.value
             + (
-                self.lapse_rate
-                * (self.parent.altitude * 1000.0 - base_height * 1000.0)
+                self.lapse_rate * (self.parent.altitude * 1000.0 - base_height * 1000.0)
             ).value
         ) + self.parent.offset
 
@@ -380,7 +372,7 @@ class ISAStratosphere(AtmosphericLayer):
             to_si(x=self.temperature.value, quantity="TEMPERATURE") / self.base_temp
         )
         exp = -1 * CONSTANTS.g / (CONSTANTS.R * self.lapse_rate)
-        res = self.base_pressure * (temp_ratio ** exp.value)
+        res = self.base_pressure * (temp_ratio**exp.value)
         return to_user_unit(quantity="PRESSURE", x=res.value)
 
 
@@ -629,9 +621,7 @@ class ISA:
         speed
             Speed of sound.
         """
-        temperature = to_si(
-            x=self.atmosphere.temperature.value, quantity="TEMPERATURE"
-        )
+        temperature = to_si(x=self.atmosphere.temperature.value, quantity="TEMPERATURE")
         res = (temperature.value * CONSTANTS.R.value * self.msl_gamma) ** 0.5
         return to_user_unit(res, "SPEED")
 
@@ -668,7 +658,7 @@ class ISA:
         """
         velocity = to_si(velocity, "SPEED")
         res = (
-            0.5 * to_si(x=self.density.value, quantity="DENSITY") * (velocity ** 2)
+            0.5 * to_si(x=self.density.value, quantity="DENSITY") * (velocity**2)
         ).value
         return to_user_unit(res, "PRESSURE")
 

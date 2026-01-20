@@ -201,9 +201,7 @@ class __Constants:
         m²/s
         """
 
-        self.a_o = (
-            (self.y * self.R * self.MSL_TEMPERATURE) ** 0.5
-        ).value
+        self.a_o = ((self.y * self.R * self.MSL_TEMPERATURE) ** 0.5).value
         """Speed of sound at sea level.
 
         Unit
