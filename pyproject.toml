@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "isadora"
+version = "1.1.100"
+description = "An ICAO-compliant Implementation of the International Standard Atmosphere."
+readme = { file = "README.rst", content-type = "text/plain" }
+license = { text = "MIT" }
+
+authors = [
+  { name = "Kolawole Andrew", email = "andrewolakola@gmail.com" }
+]
+
+requires-python = ">=3.12"
+
+dependencies = [
+  "mudu>=1.1.500"
+]
+
+keywords = [
+  "units",
+  "physics",
+  "aerospace",
+  "atmosphere",
+  "meterology",
+  "engineering",
+  "unit-conversion",
+  "unit-aware computing"
+]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Physics",
+  "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/techkaduna/isadora"
+Repository = "https://github.com/techkaduna/isadora"
+
+[tool.setuptools]
+packages = { find = {} }

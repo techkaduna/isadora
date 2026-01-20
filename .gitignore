@@ -1,0 +1,4 @@
+SCRATCH
+.mypy_cache
+isadora/__pycache__
+isadora/cli.py
