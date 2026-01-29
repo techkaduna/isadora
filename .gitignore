@@ -6,3 +6,5 @@ tests/__pycache__
 .pytest_cache
 docs/*
 pyproject.toml
+dist/*
+.pytest_cache

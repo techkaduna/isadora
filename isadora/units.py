@@ -59,6 +59,7 @@ from mudu import (
 )
 from mudu import Pressure, PASCAL, inHg, POUND_PER_SQUARE_FOOT
 from mudu import JOULE, MOLE, _UnitType
+from mudu import Speed, METER_PER_SECOND, FOOT_PER_SECOND, KNOT
 
 
 @dataclass
@@ -110,22 +111,9 @@ class QuantityTable:
     EARTH_MOLAR_MASS: Callable
     SPEC_HEAT_CONSTANT: Callable
 
-
-# ============================================================================
-# SPEED UNITS
-# ============================================================================
-METER_PER_SECOND = METER / SECOND
-FEET_PER_SECOND = FEET / SECOND
-KNOT = _UnitType(
-    _dimension="speed",
-    _unit_name="knot",
-    _unit_symbol="kn",
-    _order=None,
-)
-
-# ============================================================================
+# ================
 # LAPSE RATE UNITS
-# ============================================================================
+# ================
 KELVIN_PER_METER = KELVIN / METER
 FARENHEIT_PER_FEET = FARENHEIT / FEET
 CELSIUS_PER_FEET = CELSIUS / FEET
@@ -191,7 +179,7 @@ uscs_units = {
     "DISTANCE": FEET,
     "DYNAMIC_VISCOSITY": SLUG_PER_FEET_SECOND,
     "KINEMATIC_VISCOSITY": FEET_PER_SQR_SECOND,
-    "SPEED": FEET_PER_SECOND,
+    "SPEED": FOOT_PER_SECOND,
     "LAPSE_RATE": FARENHEIT_PER_FEET,
     "UNIV_GAS_CONSTANT": JOULE_PER_MOL_KELVIN,
     "EARTH_MOLAR_MASS": KILOGRAM_PER_MOL,
@@ -225,7 +213,7 @@ si = {
     "DISTANCE": functools.partial(Length, unit=si_units["DISTANCE"]),
     "DYNAMIC_VISCOSITY": _make_unit(si_units["DYNAMIC_VISCOSITY"]),
     "KINEMATIC_VISCOSITY": _make_unit(si_units["KINEMATIC_VISCOSITY"]),
-    "SPEED": _make_unit(si_units["SPEED"]),
+    "SPEED": functools.partial(Speed, unit_definition=si_units["SPEED"]),
     "LAPSE_RATE": _make_unit(si_units["LAPSE_RATE"]),
     "UNIV_GAS_CONSTANT": _make_unit(si_units["UNIV_GAS_CONSTANT"]),
     "EARTH_MOLAR_MASS": _make_unit(si_units["EARTH_MOLAR_MASS"]),
@@ -240,7 +228,7 @@ uscs = {
     "DISTANCE": functools.partial(Length, unit=uscs_units["DISTANCE"]),
     "DYNAMIC_VISCOSITY": _make_unit(uscs_units["DYNAMIC_VISCOSITY"]),
     "KINEMATIC_VISCOSITY": _make_unit(uscs_units["KINEMATIC_VISCOSITY"]),
-    "SPEED": _make_unit(uscs_units["SPEED"]),
+    "SPEED": functools.partial(Speed, unit_definition=uscs_units["SPEED"]),
     "LAPSE_RATE": _make_unit(uscs_units["LAPSE_RATE"]),
     "UNIV_GAS_CONSTANT": _make_unit(uscs_units["UNIV_GAS_CONSTANT"]),
     "EARTH_MOLAR_MASS": _make_unit(uscs_units["EARTH_MOLAR_MASS"]),
@@ -255,7 +243,7 @@ imperial = {
     "DISTANCE": functools.partial(Length, unit=imperial_units["DISTANCE"]),
     "DYNAMIC_VISCOSITY": _make_unit(imperial_units["DYNAMIC_VISCOSITY"]),
     "KINEMATIC_VISCOSITY": _make_unit(imperial_units["KINEMATIC_VISCOSITY"]),
-    "SPEED": _make_unit(imperial_units["SPEED"]),
+    "SPEED": functools.partial(Speed, unit_definition=imperial_units["SPEED"]),
     "LAPSE_RATE": _make_unit(imperial_units["LAPSE_RATE"]),
     "UNIV_GAS_CONSTANT": _make_unit(imperial_units["UNIV_GAS_CONSTANT"]),
     "EARTH_MOLAR_MASS": _make_unit(imperial_units["EARTH_MOLAR_MASS"]),

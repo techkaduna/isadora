@@ -1,98 +1,97 @@
 """
-examples.py
-===========
+example.py
 
-Example usage script for the ISADORA International Standard Atmosphere (ISA) model.
-
-This script demonstrates how to instantiate the :class:`isadora.ISA` class
-at various geopotential altitudes and query common atmospheric properties,
-including temperature, pressure, density, viscosities, and derived quantities
-such as Mach number and speed of sound.
-
-The examples cover multiple atmospheric layers:
-- Troposphere
-- Tropopause
-- Stratosphere (lower and upper regions)
-
-Notes
------
-- All calculations are internally performed in SI units.
-- Output units depend on the active unit standard defined in
-  :mod:`isadora.units.UnitRegistry`.
-- This script modifies ``sys.path`` to allow execution directly from the
-  repository without installing the package.
-
-This file is intended for demonstration, testing, and quick inspection
-of model behavior. It is **not** part of the public API.
-
-Examples
---------
-Run the script from the project root::
-
-    python examples/examples.py
-
-You should see printed atmospheric properties for several altitudes.
+A comprehensive tutorial demonstrating:
+- Computation of ISA 1983 atmospheric properties at selected altitudes
+- Derived quantities: dynamic pressure, Mach number, geometric height
+- Temperature offset handling
+- Proper plotting of atmospheric profiles up to 20 km
 """
 
-import os
-import sys
+import os, sys
+import matplotlib.pyplot as plt
+import numpy as np
 
-# Allow running this script directly without installing the package
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 from isadora import ISA
+from isadora.units import UnitRegistry
 
+# -------------------------------
+# Set preferred unit system
+# -------------------------------
+UnitRegistry.set_unit_standard("SI")  # Options: "SI", "USCS", "IMPERIAL"
 
-def _print_atmosphere_state(atm: ISA):
-    """
-    Print a summary of atmospheric properties for a given ISA instance.
+# -------------------------------
+# Selected altitudes for demonstration
+# -------------------------------
+altitudes = [0.0, 5.0, 10.0, 15.0, 20.0]  # km
+isa_objects = [ISA(geopotential_height=h) for h in altitudes]
 
-    Parameters
-    ----------
-    atm : ISA
-        An initialized ISA atmosphere object.
-    """
-    print(atm)
-    print("temperature", atm.temperature)
-    print("pressure", atm.pressure)
-    print("density", atm.density)
-    print("dynamic_viscosity", atm.dynamic_viscosity)
-    print("kinematic_viscosity", atm.kinematic_viscosity)
-    print("temperature_ratio", atm.temperature_ratio)
-    print("density_ratio", atm.density_ratio)
-    print("pressure_ratio", atm.pressure_ratio)
-    print("speed_of_sound", atm.speed_of_sound)
-    print("mach_number(20)", atm.mach_number(20))
-    print("dynamic_pressure(25)", atm.density_ratio)
-    print("geometric_height", atm.geometric_height)
+# -------------------------------
+# Display ISA properties at selected altitudes
+# -------------------------------
+print("\n=== ISA Properties at Selected Altitudes ===")
+for isa in isa_objects:
+    h = isa.altitude
+    print(f"\n--- Geopotential Height: {h} ---")
+    print(f"Temperature: {isa.temperature}")
+    print(f"Pressure: {isa.pressure}")
+    print(f"Density: {isa.density}")
+    print(f"Dynamic viscosity: {isa.dynamic_viscosity}")
+    print(f"Kinematic viscosity: {isa.kinematic_viscosity}")
+    print(f"Speed of sound: {isa.speed_of_sound}")
+    print(f"Atmospheric layer: {isa.atmosphere}")
 
+# -------------------------------
+# Aircraft flight properties at 250 m/s at 10 km
+# -------------------------------
+velocity = 250.0  # m/s
+atm_10km = ISA(geopotential_height=10.0)
+q = atm_10km.dynamic_pressure(velocity)
+M = atm_10km.mach_number(velocity)
+print("\n=== Aircraft Flight Properties at 10 km (250 m/s) ===")
+print(f"Dynamic pressure: {q}")
+print(f"Mach number: {M:.2f}")
 
-# ============================================================================
-# Troposphere example (≈ 5 km)
-# ============================================================================
-atm = ISA(geopotential_height=5)
-_print_atmosphere_state(atm)
+# -------------------------------
+# Temperature offset example (+5 K)
+# -------------------------------
+isa_offset = ISA(geopotential_height=10.0, offset=5.0)
+print("\n=== Temperature Offset Example (+5 K) ===")
+print(f"Temperature at 10 km with offset: {isa_offset.temperature} K")
+print(f"Layer with offset: {isa_offset.atmosphere}")
 
-print("=" * 80)
+# -------------------------------
+# Corrected plotting of ISA profiles up to 20 km
+# -------------------------------
+h_profile = np.linspace(0, 20, 201)  # 0 to 20 km in 0.1 km steps
+T_profile = []
+P_profile = []
+rho_profile = []
 
-# ============================================================================
-# Upper troposphere / lower tropopause example (≈ 15 km)
-# ============================================================================
-atm = ISA(geopotential_height=15)
-_print_atmosphere_state(atm)
+for h in h_profile:
+    isa_h = ISA(geopotential_height=h)
+    T_profile.append(isa_h.temperature.value)
+    P_profile.append(isa_h.pressure.value)
+    rho_profile.append(isa_h.density.value)
 
-print("=" * 80)
+plt.figure(figsize=(10, 6))
 
-# ============================================================================
-# Tropopause / lower stratosphere example (≈ 25 km)
-# ============================================================================
-atm = ISA(geopotential_height=25)
-_print_atmosphere_state(atm)
+# Plot Temperature (linear)
+plt.plot(T_profile, h_profile, label="Temperature (K)", color="red", linewidth=2)
+# Plot Density (linear)
+plt.plot(rho_profile, h_profile, label="Density (kg/m³)", color="green", linewidth=2)
+# Plot Pressure (log scale for better visibility)
+plt.plot(P_profile, h_profile, label="Pressure (Pa)", color="blue", linewidth=2)
+plt.xscale("log")
 
-print("=" * 80)
+# Invert y-axis so sea level is at bottom
+plt.gca().invert_yaxis()
 
-# ============================================================================
-# Upper stratosphere example (≈ 45 km)
-# ============================================================================
-atm = ISA(geopotential_height=45)
-_print_atmosphere_state(atm)
+plt.xlabel("Value")
+plt.ylabel("Geopotential Height (km)")
+plt.title("ISA 1983 Atmospheric Profiles up to 20 km")
+plt.grid(True, which="both", linestyle="--", linewidth=0.5)
+plt.legend()
+plt.tight_layout()
+plt.show()
