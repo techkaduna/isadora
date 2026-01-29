@@ -2,3 +2,4 @@ sphinx>=7.0
 mudu>=1.2.0
 isadora>=1.2.0
 sphinx_rtd_theme
+sphinx-autoapi
