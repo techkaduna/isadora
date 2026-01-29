@@ -111,6 +111,7 @@ class QuantityTable:
     EARTH_MOLAR_MASS: Callable
     SPEC_HEAT_CONSTANT: Callable
 
+
 # ================
 # LAPSE RATE UNITS
 # ================
