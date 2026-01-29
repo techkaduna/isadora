@@ -42,9 +42,8 @@ autosummary_generate = True
 # -- AutoAPI settings --------------------------------------------------------
 autoapi_type = "python"
 # AutoAPI directory
-autoapi_dirs = [
-    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "isadora"))
-]
+autoapi_dirs = ["../isadora"]
+autoapi_root="api"
 autoapi_add_toctree_entry = True
 autoapi_keep_files = True
 autoapi_generate_api_docs = True
