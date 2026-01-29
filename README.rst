@@ -1,4 +1,4 @@
-.. figure:: https://raw.githubusercontent.com/techkaduna/isadora/main/isadora.svg
+.. figure:: https://raw.githubusercontent.com/techkaduna/isadora/main/isadora.png
    :alt: isadora logo
 
    isadora logo
