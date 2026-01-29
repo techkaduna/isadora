@@ -1,8 +1,7 @@
-.. image:: https://raw.githubusercontent.com/techkaduna/isadora/main/isadora.png
-   :alt: Isadora Logo
-   :width: 120px
-   :align: center
-   :target: https://github.com/techkaduna/isadora
+.. figure:: https://raw.githubusercontent.com/techkaduna/isadora/main/isadora.svg
+   :alt: isadora logo
+
+   isadora logo
 
 ISADORA - ICAO 1983 Compliant International Standard Atmosphere (ISA)
 ====================================================================
