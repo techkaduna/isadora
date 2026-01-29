@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISA 1983 Atmospheric Profiles Example &mdash; isadora 1.2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=2f3f59b4" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6efca38a"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="prev" title="Isadora ISA Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            isadora
+              <img src="_static/isadora.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ISA 1983 Atmospheric Profiles Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-script">Example Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-line-output">Command-Line Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-0-2026-01-29">Version 1.2.0 (2026-01-29)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#added">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#changed">Changed</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Isadora</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#code-style-and-guidelines">Code Style and Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#testing-your-changes">Testing Your Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#submitting-changes">Submitting Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#issue-reporting">Issue Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#community-guidelines">Community Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#license-and-intellectual-property">License and Intellectual Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/conf/index.html">conf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/conf/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/conf/index.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/conf/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.project"><code class="docutils literal notranslate"><span class="pre">project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.author"><code class="docutils literal notranslate"><span class="pre">author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.release"><code class="docutils literal notranslate"><span class="pre">release</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.extensions"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.autodoc_default_options"><code class="docutils literal notranslate"><span class="pre">autodoc_default_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.autodoc_inherit_docstrings"><code class="docutils literal notranslate"><span class="pre">autodoc_inherit_docstrings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.autosummary_generate"><code class="docutils literal notranslate"><span class="pre">autosummary_generate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.autoapi_type"><code class="docutils literal notranslate"><span class="pre">autoapi_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.autoapi_dirs"><code class="docutils literal notranslate"><span class="pre">autoapi_dirs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.autoapi_add_toctree_entry"><code class="docutils literal notranslate"><span class="pre">autoapi_add_toctree_entry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.autoapi_keep_files"><code class="docutils literal notranslate"><span class="pre">autoapi_keep_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.autoapi_generate_api_docs"><code class="docutils literal notranslate"><span class="pre">autoapi_generate_api_docs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.napoleon_google_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_google_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.napoleon_numpy_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_numpy_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.napoleon_include_init_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_init_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.napoleon_include_private_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_private_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.napoleon_use_admonition_for_note"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_note</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.napoleon_use_param"><code class="docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.napoleon_use_rtype"><code class="docutils literal notranslate"><span class="pre">napoleon_use_rtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.templates_path"><code class="docutils literal notranslate"><span class="pre">templates_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.exclude_patterns"><code class="docutils literal notranslate"><span class="pre">exclude_patterns</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.html_theme"><code class="docutils literal notranslate"><span class="pre">html_theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.html_static_path"><code class="docutils literal notranslate"><span class="pre">html_static_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.setup"><code class="docutils literal notranslate"><span class="pre">setup()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.html_logo"><code class="docutils literal notranslate"><span class="pre">html_logo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.latex_engine"><code class="docutils literal notranslate"><span class="pre">latex_engine</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.latex_elements"><code class="docutils literal notranslate"><span class="pre">latex_elements</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/conf/index.html#conf.latex_documents"><code class="docutils literal notranslate"><span class="pre">latex_documents</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/example/index.html">example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/example/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/example/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.altitudes"><code class="docutils literal notranslate"><span class="pre">altitudes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.isa_objects"><code class="docutils literal notranslate"><span class="pre">isa_objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.h"><code class="docutils literal notranslate"><span class="pre">h</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.velocity"><code class="docutils literal notranslate"><span class="pre">velocity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.atm_10km"><code class="docutils literal notranslate"><span class="pre">atm_10km</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.q"><code class="docutils literal notranslate"><span class="pre">q</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.M"><code class="docutils literal notranslate"><span class="pre">M</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.isa_offset"><code class="docutils literal notranslate"><span class="pre">isa_offset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.h_profile"><code class="docutils literal notranslate"><span class="pre">h_profile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.T_profile"><code class="docutils literal notranslate"><span class="pre">T_profile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.P_profile"><code class="docutils literal notranslate"><span class="pre">P_profile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.rho_profile"><code class="docutils literal notranslate"><span class="pre">rho_profile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/example/index.html#example.isa_h"><code class="docutils literal notranslate"><span class="pre">isa_h</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/isadora/index.html">isadora</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/isadora/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/isadora/base/index.html">isadora.base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/isadora/constants/index.html">isadora.constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/isadora/units/index.html">isadora.units</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/isadora/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/isadora/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/isadora/index.html#package-contents">Package Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/isadora/index.html#isadora.UnitRegistry"><code class="docutils literal notranslate"><span class="pre">UnitRegistry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/isadora/index.html#isadora.CONSTANTS"><code class="docutils literal notranslate"><span class="pre">CONSTANTS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/isadora/index.html#isadora.ISA"><code class="docutils literal notranslate"><span class="pre">ISA</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/test_isadora/index.html">test_isadora</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/test_isadora/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/test_isadora/index.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/test_isadora/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/test_isadora/index.html#test_isadora.ICAO_REFERENCE"><code class="docutils literal notranslate"><span class="pre">ICAO_REFERENCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/test_isadora/index.html#test_isadora.test_isa_properties_against_icao"><code class="docutils literal notranslate"><span class="pre">test_isa_properties_against_icao()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/test_isadora/index.html#test_isadora.test_mach_number_calculation"><code class="docutils literal notranslate"><span class="pre">test_mach_number_calculation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/test_isadora/index.html#test_isadora.test_dynamic_pressure"><code class="docutils literal notranslate"><span class="pre">test_dynamic_pressure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/test_isadora/index.html#test_isadora.test_geometric_height_conversion"><code class="docutils literal notranslate"><span class="pre">test_geometric_height_conversion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/test_isadora/index.html#test_isadora.test_to_user_unit_conversion"><code class="docutils literal notranslate"><span class="pre">test_to_user_unit_conversion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/test_isadora/index.html#test_isadora.test_constants_immutability"><code class="docutils literal notranslate"><span class="pre">test_constants_immutability()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/test_isadora/index.html#test_isadora.test_constants_values"><code class="docutils literal notranslate"><span class="pre">test_constants_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/test_isadora/index.html#test_isadora.test_layer_boundaries"><code class="docutils literal notranslate"><span class="pre">test_layer_boundaries()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">isadora</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ISA 1983 Atmospheric Profiles Example</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/examples.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="isa-1983-atmospheric-profiles-example">
+<h1>ISA 1983 Atmospheric Profiles Example<a class="headerlink" href="#isa-1983-atmospheric-profiles-example" title="Link to this heading"></a></h1>
+<p>This tutorial demonstrates how to use the <strong>Isadora</strong> package to:</p>
+<ul class="simple">
+<li><p>Compute atmospheric properties at selected altitudes.</p></li>
+<li><p>Compute derived quantities like dynamic pressure and Mach number.</p></li>
+<li><p>Apply temperature offsets.</p></li>
+<li><p>Plot temperature, pressure, and density profiles up to 20 km.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All quantities are computed assuming <strong>geopotential altitude</strong> and using SI units by default. Unit conversions are supported.</p>
+</div>
+<section id="example-script">
+<h2>Example Script<a class="headerlink" href="#example-script" title="Link to this heading"></a></h2>
+<p>The following Python script, <code class="docutils literal notranslate"><span class="pre">examples.py</span></code>, demonstrates the features:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">&quot;..&quot;</span><span class="p">)))</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">isadora</span><span class="w"> </span><span class="kn">import</span> <span class="n">ISA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">isadora.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">UnitRegistry</span>
+
+<span class="c1"># Set preferred unit system</span>
+<span class="n">UnitRegistry</span><span class="o">.</span><span class="n">set_unit_standard</span><span class="p">(</span><span class="s2">&quot;SI&quot;</span><span class="p">)</span>
+
+<span class="c1"># Selected altitudes</span>
+<span class="n">altitudes</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">]</span>
+<span class="n">isa_objects</span> <span class="o">=</span> <span class="p">[</span><span class="n">ISA</span><span class="p">(</span><span class="n">geopotential_height</span><span class="o">=</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">altitudes</span><span class="p">]</span>
+
+<span class="c1"># Display ISA properties</span>
+<span class="k">for</span> <span class="n">isa</span> <span class="ow">in</span> <span class="n">isa_objects</span><span class="p">:</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">isa</span><span class="o">.</span><span class="n">altitude</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- Geopotential Height: </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2"> km ---&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature: </span><span class="si">{</span><span class="n">isa</span><span class="o">.</span><span class="n">temperature</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pressure: </span><span class="si">{</span><span class="n">isa</span><span class="o">.</span><span class="n">pressure</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Density: </span><span class="si">{</span><span class="n">isa</span><span class="o">.</span><span class="n">density</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dynamic viscosity: </span><span class="si">{</span><span class="n">isa</span><span class="o">.</span><span class="n">dynamic_viscosity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kinematic viscosity: </span><span class="si">{</span><span class="n">isa</span><span class="o">.</span><span class="n">kinematic_viscosity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Speed of sound: </span><span class="si">{</span><span class="n">isa</span><span class="o">.</span><span class="n">speed_of_sound</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Atmospheric layer: </span><span class="si">{</span><span class="n">isa</span><span class="o">.</span><span class="n">atmosphere</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Aircraft properties at 10 km</span>
+<span class="n">velocity</span> <span class="o">=</span> <span class="mf">250.0</span>  <span class="c1"># m/s</span>
+<span class="n">atm_10km</span> <span class="o">=</span> <span class="n">ISA</span><span class="p">(</span><span class="n">geopotential_height</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">atm_10km</span><span class="o">.</span><span class="n">dynamic_pressure</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">atm_10km</span><span class="o">.</span><span class="n">mach_number</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Aircraft Flight Properties at 10 km (250 m/s) ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dynamic pressure: </span><span class="si">{</span><span class="n">q</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mach number: </span><span class="si">{</span><span class="n">M</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Temperature offset example (+5 K)</span>
+<span class="n">isa_offset</span> <span class="o">=</span> <span class="n">ISA</span><span class="p">(</span><span class="n">geopotential_height</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Temperature Offset Example (+5 K) ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature at 10 km with offset: </span><span class="si">{</span><span class="n">isa_offset</span><span class="o">.</span><span class="n">temperature</span><span class="si">}</span><span class="s2"> K&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Layer with offset: </span><span class="si">{</span><span class="n">isa_offset</span><span class="o">.</span><span class="n">atmosphere</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># -------------------------------</span>
+<span class="c1"># Corrected plotting of ISA profiles up to 20 km</span>
+<span class="c1"># -------------------------------</span>
+<span class="n">h_profile</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">201</span><span class="p">)</span>  <span class="c1"># 0 to 20 km in 0.1 km steps</span>
+<span class="n">T_profile</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">P_profile</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">rho_profile</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">h_profile</span><span class="p">:</span>
+    <span class="n">isa_h</span> <span class="o">=</span> <span class="n">ISA</span><span class="p">(</span><span class="n">geopotential_height</span><span class="o">=</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">T_profile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">isa_h</span><span class="o">.</span><span class="n">temperature</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">P_profile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">isa_h</span><span class="o">.</span><span class="n">pressure</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">rho_profile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">isa_h</span><span class="o">.</span><span class="n">density</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Plot Temperature (linear)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T_profile</span><span class="p">,</span> <span class="n">h_profile</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Temperature (K)&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Plot Density (linear)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho_profile</span><span class="p">,</span> <span class="n">h_profile</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Density (kg/m³)&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Plot Pressure (log scale for better visibility)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P_profile</span><span class="p">,</span> <span class="n">h_profile</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Pressure (Pa)&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+
+<span class="c1"># Invert y-axis so sea level is at bottom</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Geopotential Height (km)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;ISA 1983 Atmospheric Profiles up to 20 km&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="command-line-output">
+<h2>Command-Line Output<a class="headerlink" href="#command-line-output" title="Link to this heading"></a></h2>
+<p>Run the script with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>examples.py
+</pre></div>
+</div>
+<p>The expected command-line output is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>=== ISA Properties at Selected Altitudes ===
+
+--- Geopotential Height: 0.0 km ---
+Temperature: 288.15 K
+Pressure: 101325.0 Pa
+Density: 1.2250000010542619 kg/m3
+Dynamic viscosity: 1.7894e-05 kg/(m*s)
+Kinematic viscosity: 1.4607346926204106e-05 m**2/s
+Speed of sound: 340.29399039703884 m/s
+Atmospheric layer: ISA Troposhere(0.0 km)
+
+--- Geopotential Height: 5.0 km ---
+Temperature: 255.64999999999998 K
+Pressure: 54019.888661612255 Pa
+Density: 0.7361155435934009 kg/m3
+Dynamic viscosity: 1.6281356844719354e-05 kg/(m*s)
+Kinematic viscosity: 2.2117936493014045e-05 m**2/s
+Speed of sound: 320.52939667578073 m/s
+Atmospheric layer: ISA Troposhere(5.0 km)
+
+--- Geopotential Height: 10.0 km ---
+Temperature: 223.14999999999998 K
+Pressure: 26436.243087647996 Pa
+Density: 0.412706155163577 kg/m3
+Dynamic viscosity: 1.4571246406450602e-05 kg/(m*s)
+Kinematic viscosity: 3.5306588535553236e-05 m**2/s
+Speed of sound: 299.46316696104714 m/s
+Atmospheric layer: ISA Troposhere(10.0 km)
+
+--- Geopotential Height: 15.0 km ---
+Temperature: 216.65 K
+Pressure: 12044.563506261342 Pa
+Density: 0.19367362129659876 kg/m3
+Dynamic viscosity: 1.4216287481625591e-05 kg/(m*s)
+Kinematic viscosity: 7.340332352155617e-05 m**2/s
+Speed of sound: 295.06949556492617 m/s
+Atmospheric layer: ISA Tropopause(15.0 km)
+
+--- Geopotential Height: 20.0 km ---
+Temperature: 216.65 K
+Pressure: 5474.882347734884 Pa
+Density: 0.08803476272987591 kg/m3
+Dynamic viscosity: 1.4216287481625591e-05 kg/(m*s)
+Kinematic viscosity: 0.00016148492982535274 m**2/s
+Speed of sound: 295.06949556492617 m/s
+Atmospheric layer: ISA Tropopause(20.0 km)
+
+=== Aircraft Flight Properties at 10 km (250 m/s) ===
+Dynamic pressure: 12897.067348861781 Pa
+Mach number: 0.83
+
+=== Temperature Offset Example (+5 K) ===
+Temperature at 10 km with offset: 228.14999999999998 K K
+Layer with offset: ISA Troposhere(10.0 km)
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/isa_atm_profile.png"><img alt="ISA Profiles Plot" class="align-center" src="_images/isa_atm_profile.png" style="width: 600px;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The plot shows:</p>
+<ul class="simple">
+<li><p><strong>Red:</strong> Temperature profile (K)</p></li>
+<li><p><strong>Green:</strong> Density profile (kg/m³)</p></li>
+<li><p><strong>Blue:</strong> Pressure profile (Pa, log scale)</p></li>
+<li><p><strong>Y-axis:</strong> Geopotential height (km, sea level at bottom)</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Isadora ISA Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Kolawole Andrew.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
