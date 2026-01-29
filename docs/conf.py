@@ -1,30 +1,24 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
 import os
 import sys
+from pathlib import Path
 
-sys.path.insert(
-    0,
-    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "isadora"))
-)
+# --- Paths -------------------------------------------------
 
-LOCAL_ENV = os.path.abspath(os.path.dirname(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(LOCAL_ENV, "..", ".."))
-PACKAGE_NAME = "isadora"
-PACKAGE_DIR = os.path.join(PROJECT_ROOT, PACKAGE_NAME)
+DOCS_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = DOCS_DIR.parent
+PACKAGE_DIR = PROJECT_ROOT / "isadora"
 
-sys.path.insert(0, PACKAGE_DIR)
+sys.path.insert(0, str(PACKAGE_DIR))
 
-# -- Project information -----------------------------------------------------
+# -- Project information -----------------------------------
+
 project = "isadora"
 author = "Kolawole Andrew"
 copyright = "2026, Kolawole Andrew"
 release = "1.2.0"
 
-# -- General configuration ---------------------------------------------------
+# -- General configuration ---------------------------------
+
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
@@ -33,42 +27,42 @@ extensions = [
     "autoapi.extension",
 ]
 
-# -- Autodoc settings --------------------------------------------------------
+# -- Autodoc -----------------------------------------------
+
 autodoc_default_options = {
     "members": True,
     "undoc-members": True,
-    "private-members": False,
     "show-inheritance": True,
     "inherited-members": True,
 }
 autodoc_inherit_docstrings = True
 
-# -- Autosummary settings ----------------------------------------------------
 autosummary_generate = True
 
-# -- AutoAPI settings --------------------------------------------------------
+# -- AutoAPI (CRITICAL FIX) --------------------------------
+
 autoapi_type = "python"
-# AutoAPI directory
-autoapi_dirs = [PACKAGE_DIR]
+autoapi_dirs = [str(PACKAGE_DIR)]   # ABSOLUTE PATH
 autoapi_root = "api"
 autoapi_add_toctree_entry = True
 autoapi_keep_files = True
 autoapi_generate_api_docs = True
 
-# -- Napoleon settings (NumPy style docstrings) ------------------------------
+# -- Napoleon ----------------------------------------------
+
 napoleon_google_docstring = False
 napoleon_numpy_docstring = True
 napoleon_include_init_with_doc = True
-napoleon_include_private_with_doc = False
-napoleon_use_admonition_for_note = False
 napoleon_use_param = True
 napoleon_use_rtype = True
 
-# -- Templates and exclude patterns ------------------------------------------
-templates_path = ["_templates"]
-exclude_patterns = ["_build", "**/_build", "Thumbs.db", ".DS_Store"]
+# -- Templates ---------------------------------------------
 
-# -- HTML output settings ----------------------------------------------------
+templates_path = ["_templates"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+
+# -- HTML --------------------------------------------------
+
 html_theme = "sphinx_rtd_theme"
 html_theme_options = {
     "navigation_depth": 4,
@@ -76,30 +70,7 @@ html_theme_options = {
     "sticky_navigation": True,
 }
 html_static_path = ["_static"]
-
-# Add custom CSS
-def setup(app):
-    app.add_css_file("custom.css")
-
 html_logo = "_static/isadora.svg"
 
-latex_engine = "pdflatex"
-latex_elements = {
-    "papersize": "a4paper",
-    "pointsize": "11pt",
-    "preamble": r"""
-    \usepackage{amsmath}
-    \usepackage{amssymb}
-    \setcounter{tocdepth}{2}
-    """,
-}
-
-latex_documents = [
-    (
-        "index",
-        "isadora.tex",
-        "isadora Documentation",
-        "Kolawole Andrew",
-        "manual",
-    ),
-]
+def setup(app):
+    app.add_css_file("custom.css")
