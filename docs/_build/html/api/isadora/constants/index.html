@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>isadora.constants &mdash; isadora 1.2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=2f3f59b4" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=6efca38a"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="isadora.units" href="../units/index.html" />
+    <link rel="prev" title="isadora.base" href="../base/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            isadora
+              <img src="../../../_static/isadora.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../examples.html">ISA 1983 Atmospheric Profiles Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#example-script">Example Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#command-line-output">Command-Line Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#version-1-2-0-2026-01-29">Version 1.2.0 (2026-01-29)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../changelog.html#added">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../changelog.html#changed">Changed</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing to Isadora</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#code-style-and-guidelines">Code Style and Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#testing-your-changes">Testing Your Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#submitting-changes">Submitting Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#issue-reporting">Issue Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#community-guidelines">Community Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#license-and-intellectual-property">License and Intellectual Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../conf/index.html">conf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../conf/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../conf/index.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../conf/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.LOCAL_ENV"><code class="docutils literal notranslate"><span class="pre">LOCAL_ENV</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.PROJECT_ROOT"><code class="docutils literal notranslate"><span class="pre">PROJECT_ROOT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.PACKAGE_NAME"><code class="docutils literal notranslate"><span class="pre">PACKAGE_NAME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.PACKAGE_DIR"><code class="docutils literal notranslate"><span class="pre">PACKAGE_DIR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.project"><code class="docutils literal notranslate"><span class="pre">project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.author"><code class="docutils literal notranslate"><span class="pre">author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.release"><code class="docutils literal notranslate"><span class="pre">release</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.extensions"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.autodoc_default_options"><code class="docutils literal notranslate"><span class="pre">autodoc_default_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.autodoc_inherit_docstrings"><code class="docutils literal notranslate"><span class="pre">autodoc_inherit_docstrings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.autosummary_generate"><code class="docutils literal notranslate"><span class="pre">autosummary_generate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.autoapi_type"><code class="docutils literal notranslate"><span class="pre">autoapi_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.autoapi_dirs"><code class="docutils literal notranslate"><span class="pre">autoapi_dirs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.autoapi_root"><code class="docutils literal notranslate"><span class="pre">autoapi_root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.autoapi_add_toctree_entry"><code class="docutils literal notranslate"><span class="pre">autoapi_add_toctree_entry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.autoapi_keep_files"><code class="docutils literal notranslate"><span class="pre">autoapi_keep_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.autoapi_generate_api_docs"><code class="docutils literal notranslate"><span class="pre">autoapi_generate_api_docs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.napoleon_google_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_google_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.napoleon_numpy_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_numpy_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.napoleon_include_init_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_init_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.napoleon_include_private_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_private_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.napoleon_use_admonition_for_note"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_note</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.napoleon_use_param"><code class="docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.napoleon_use_rtype"><code class="docutils literal notranslate"><span class="pre">napoleon_use_rtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.templates_path"><code class="docutils literal notranslate"><span class="pre">templates_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.exclude_patterns"><code class="docutils literal notranslate"><span class="pre">exclude_patterns</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.html_theme"><code class="docutils literal notranslate"><span class="pre">html_theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.html_static_path"><code class="docutils literal notranslate"><span class="pre">html_static_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.setup"><code class="docutils literal notranslate"><span class="pre">setup()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.html_logo"><code class="docutils literal notranslate"><span class="pre">html_logo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.latex_engine"><code class="docutils literal notranslate"><span class="pre">latex_engine</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.latex_elements"><code class="docutils literal notranslate"><span class="pre">latex_elements</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../conf/index.html#conf.latex_documents"><code class="docutils literal notranslate"><span class="pre">latex_documents</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../example/index.html">example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../example/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.altitudes"><code class="docutils literal notranslate"><span class="pre">altitudes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.isa_objects"><code class="docutils literal notranslate"><span class="pre">isa_objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.h"><code class="docutils literal notranslate"><span class="pre">h</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.velocity"><code class="docutils literal notranslate"><span class="pre">velocity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.atm_10km"><code class="docutils literal notranslate"><span class="pre">atm_10km</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.q"><code class="docutils literal notranslate"><span class="pre">q</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.M"><code class="docutils literal notranslate"><span class="pre">M</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.isa_offset"><code class="docutils literal notranslate"><span class="pre">isa_offset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.h_profile"><code class="docutils literal notranslate"><span class="pre">h_profile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.T_profile"><code class="docutils literal notranslate"><span class="pre">T_profile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.P_profile"><code class="docutils literal notranslate"><span class="pre">P_profile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.rho_profile"><code class="docutils literal notranslate"><span class="pre">rho_profile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../example/index.html#example.isa_h"><code class="docutils literal notranslate"><span class="pre">isa_h</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">isadora</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../base/index.html">isadora.base</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">isadora.constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../units/index.html">isadora.units</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#package-contents">Package Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#isadora.UnitRegistry"><code class="docutils literal notranslate"><span class="pre">UnitRegistry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#isadora.CONSTANTS"><code class="docutils literal notranslate"><span class="pre">CONSTANTS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#isadora.ISA"><code class="docutils literal notranslate"><span class="pre">ISA</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../test_isadora/index.html">test_isadora</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../test_isadora/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../test_isadora/index.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../test_isadora/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../test_isadora/index.html#test_isadora.ICAO_REFERENCE"><code class="docutils literal notranslate"><span class="pre">ICAO_REFERENCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../test_isadora/index.html#test_isadora.test_isa_properties_against_icao"><code class="docutils literal notranslate"><span class="pre">test_isa_properties_against_icao()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../test_isadora/index.html#test_isadora.test_mach_number_calculation"><code class="docutils literal notranslate"><span class="pre">test_mach_number_calculation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../test_isadora/index.html#test_isadora.test_dynamic_pressure"><code class="docutils literal notranslate"><span class="pre">test_dynamic_pressure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../test_isadora/index.html#test_isadora.test_geometric_height_conversion"><code class="docutils literal notranslate"><span class="pre">test_geometric_height_conversion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../test_isadora/index.html#test_isadora.test_to_user_unit_conversion"><code class="docutils literal notranslate"><span class="pre">test_to_user_unit_conversion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../test_isadora/index.html#test_isadora.test_constants_immutability"><code class="docutils literal notranslate"><span class="pre">test_constants_immutability()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../test_isadora/index.html#test_isadora.test_constants_values"><code class="docutils literal notranslate"><span class="pre">test_constants_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../test_isadora/index.html#test_isadora.test_layer_boundaries"><code class="docutils literal notranslate"><span class="pre">test_layer_boundaries()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">isadora</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">isadora</a></li>
+      <li class="breadcrumb-item active">isadora.constants</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/api/isadora/constants/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-isadora.constants">
+<span id="isadora-constants"></span><h1>isadora.constants<a class="headerlink" href="#module-isadora.constants" title="Link to this heading"></a></h1>
+<p>Physical and atmospheric constants used throughout the ISADORA package.</p>
+<p>This module defines a centralized container for physical constants
+required by the International Standard Atmosphere (ISA) model and
+related thermodynamic computations. All constants are expressed in
+SI units and wrapped using the internal unit-handling system.</p>
+<p>The constants are instantiated once and exposed through the
+<a class="reference internal" href="../../../autoapi/isadora/constants/index.html#id0" title="isadora.constants.CONSTANTS"><code class="xref py py-data docutils literal notranslate"><span class="pre">CONSTANTS</span></code></a> object.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Constants are stored as unit-aware objects where applicable.</p></li>
+<li><p>Values correspond to standard ISA sea-level conditions unless
+otherwise stated.</p></li>
+<li><p>This module is intended to be read-only after initialization.</p></li>
+</ul>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<p>__Constants</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.CONSTANTS">
+<span class="sig-prename descclassname"><span class="pre">isadora.constants.</span></span><span class="sig-name descname"><span class="pre">CONSTANTS</span></span><a class="headerlink" href="#isadora.constants.CONSTANTS" title="Link to this definition"></a></dt>
+<dd><p>Singleton instance containing all defined constants.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../../autoapi/isadora/constants/index.html#isadora.constants.__Constants" title="isadora.constants.__Constants">__Constants</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../../autoapi/isadora/constants/index.html#id0" title="isadora.constants.CONSTANTS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CONSTANTS</span></code></a></p></td>
+<td><p>Singleton instance containing all physical and atmospheric constants.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h2>Classes<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../../autoapi/isadora/constants/index.html#isadora.constants.__Constants" title="isadora.constants.__Constants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__Constants</span></code></a></p></td>
+<td><p>Container class for physical and atmospheric constants.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="isadora.constants.__Constants">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">isadora.constants.</span></span><span class="sig-name descname"><span class="pre">__Constants</span></span><a class="headerlink" href="#isadora.constants.__Constants" title="Link to this definition"></a></dt>
+<dd><p>Container class for physical and atmospheric constants.</p>
+<p>This class encapsulates all constants used by the ISA model,
+including sea-level reference values and universal physical
+constants. Each constant is defined as a unit-aware parameter
+and initialized with its corresponding numerical value.</p>
+<p class="rubric">Notes</p>
+<p>This class is intended for internal use only and should not be
+instantiated directly by users. A singleton instance is exposed
+as <a class="reference internal" href="../../../autoapi/isadora/constants/index.html#id0" title="isadora.constants.CONSTANTS"><code class="xref py py-data docutils literal notranslate"><span class="pre">CONSTANTS</span></code></a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.MSL_TEMPERATURE">
+<span class="sig-name descname"><span class="pre">MSL_TEMPERATURE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.MSL_TEMPERATURE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.MSL_PRESSURE">
+<span class="sig-name descname"><span class="pre">MSL_PRESSURE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.MSL_PRESSURE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.MSL_DENSITY">
+<span class="sig-name descname"><span class="pre">MSL_DENSITY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.MSL_DENSITY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.MSL_DYNAMIC_VISCOSITY">
+<span class="sig-name descname"><span class="pre">MSL_DYNAMIC_VISCOSITY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.MSL_DYNAMIC_VISCOSITY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.MSL_KINEMATIC_VISCOSITY">
+<span class="sig-name descname"><span class="pre">MSL_KINEMATIC_VISCOSITY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.MSL_KINEMATIC_VISCOSITY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.g">
+<span class="sig-name descname"><span class="pre">g</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.g" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.R">
+<span class="sig-name descname"><span class="pre">R</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.R_">
+<span class="sig-name descname"><span class="pre">R_</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.R_" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.r">
+<span class="sig-name descname"><span class="pre">r</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.r" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.M">
+<span class="sig-name descname"><span class="pre">M</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.M" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.a_o">
+<span class="sig-name descname"><span class="pre">a_o</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.a_o" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.y">
+<span class="sig-name descname"><span class="pre">y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.4</span></em><a class="headerlink" href="#isadora.constants.__Constants.y" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.c_p">
+<span class="sig-name descname"><span class="pre">c_p</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.c_p" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.c_v">
+<span class="sig-name descname"><span class="pre">c_v</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.c_v" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isadora.constants.__Constants.S">
+<span class="sig-name descname"><span class="pre">S</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../../autoapi/isadora/units/index.html#isadora.units._UnitParam" title="isadora.units._UnitParam"><span class="pre">isadora.units._UnitParam</span></a></em><a class="headerlink" href="#isadora.constants.__Constants.S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">isadora.constants.</span></span><span class="sig-name descname"><span class="pre">CONSTANTS</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Singleton instance containing all physical and atmospheric constants.</p>
+<p>This object should be imported and used wherever constants are
+required within the ISADORA package.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../base/index.html" class="btn btn-neutral float-left" title="isadora.base" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../units/index.html" class="btn btn-neutral float-right" title="isadora.units" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Kolawole Andrew.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

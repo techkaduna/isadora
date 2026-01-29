@@ -11,6 +11,13 @@ sys.path.insert(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "isadora"))
 )
 
+LOCAL_ENV = os.path.abspath(os.path.dirname(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(LOCAL_ENV, "..", ".."))
+PACKAGE_NAME = "isadora"
+PACKAGE_DIR = os.path.join(PROJECT_ROOT, PACKAGE_NAME)
+
+sys.path.insert(0, PACKAGE_DIR)
+
 # -- Project information -----------------------------------------------------
 project = "isadora"
 author = "Kolawole Andrew"
@@ -42,8 +49,8 @@ autosummary_generate = True
 # -- AutoAPI settings --------------------------------------------------------
 autoapi_type = "python"
 # AutoAPI directory
-autoapi_dirs = ["../isadora"]
-autoapi_root="api"
+autoapi_dirs = [PACKAGE_DIR]
+autoapi_root = "api"
 autoapi_add_toctree_entry = True
 autoapi_keep_files = True
 autoapi_generate_api_docs = True
@@ -59,7 +66,7 @@ napoleon_use_rtype = True
 
 # -- Templates and exclude patterns ------------------------------------------
 templates_path = ["_templates"]
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+exclude_patterns = ["_build", "**/_build", "Thumbs.db", ".DS_Store"]
 
 # -- HTML output settings ----------------------------------------------------
 html_theme = "sphinx_rtd_theme"
