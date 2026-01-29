@@ -1,4 +1,4 @@
-.. image:: https://raw.githubusercontent.com/techkaduna/isadora/main/isadora.svg
+.. image:: https://raw.githubusercontent.com/techkaduna/isadora/main/isadora.png
    :alt: Isadora Logo
    :width: 120px
    :align: center
