@@ -1,0 +1,143 @@
+Metadata-Version: 2.4
+Name: isadora
+Version: 1.2.0
+Summary: An ICAO-compliant Implementation of the International Standard Atmosphere.
+Author-email: Kolawole Andrew <andrewolakola@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/techkaduna/isadora
+Project-URL: Repository, https://github.com/techkaduna/isadora
+Keywords: units,physics,aerospace,atmosphere,meteorology,engineering,unit-conversion,unit-aware computing
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mudu>=1.2.0
+Dynamic: license-file
+
+# ![Isadora Logo](https://github.com/techkaduna/isadora/blob/master/isadora.png)
+
+# ISADORA - ICAO 1983 Compliant International Standard Atmosphere (ISA)
+
+**Isadora** is a lightweight, precise, and Pythonic implementation of the International Standard Atmosphere (ISA) model. It provides **atmospheric properties** (temperature, pressure, density, dynamic and kinematic viscosity, speed of sound) at any geopotential altitude.
+
+The package is fully **unit-aware**, supporting **SI**, **USCS**, and **Imperial** units, and validated against ICAO 1983 reference tables.
+
+Ideal for aerospace engineers, researchers, and students, Isadora simplifies atmospheric computations while ensuring accuracy and unit safety.
+
+## Features
+
+- Compute **unit-aware atmospheric properties** at any geopotential height.
+- Compute **derived quantities**: Mach number, dynamic pressure, geometric height.
+- Support for multiple unit systems: SI (default), USCS, Imperial.
+- **Physical constants** implemented using type-safe, immutable units.
+- Fully **ICAO 1983 compliant** calculations.
+- **Pytest-tested** for physical consistency, numerical correctness, and unit integrity.
+
+## Installation
+
+Install via `pip`:
+
+```bash
+pip install isadora
+```
+
+Or clone the repository and install locally:
+
+```bash
+git clone https://github.com/techkaduna/isadora.git
+cd isadora
+pip install .
+```
+
+## Dependencies
+
+- Python >= 3.10
+- `mudu` – unit and measurement library
+- `dataclasses` (Python 3.10+ has it built-in)
+- `pytest` – for running the test suite
+
+## Quick Start
+
+Import the package and create an ISA atmosphere:
+
+```python
+from isadora import ISA
+
+# Create an ISA atmosphere at 5 km geopotential height
+atm = ISA(geopotential_height=5)
+
+print("Temperature:", atm.temperature)
+print("Pressure:", atm.pressure)
+print("Density:", atm.density)
+print("Dynamic Viscosity:", atm.dynamic_viscosity)
+print("Kinematic Viscosity:", atm.kinematic_viscosity)
+print("Speed of Sound:", atm.speed_of_sound)
+print("Mach Number at 20 m/s:", atm.mach_number(20))
+print("Geometric Height:", atm.geometric_height)
+```
+
+## Switching Units
+
+Change the global unit system using `UnitRegistry`:
+
+```python
+from isadora.units import UnitRegistry
+
+# Set to USCS units
+UnitRegistry.set_unit_standard("USCS")
+
+atm_uscs = ISA(geopotential_height=10)
+print("Temperature (USCS):", atm_uscs.temperature)
+print("Pressure (USCS):", atm_uscs.pressure)
+```
+
+## Derived Quantities
+
+The `ISA` object provides convenient methods:
+
+- `atm.mach_number(velocity)` – computes Mach number for a given velocity.
+- `atm.dynamic_pressure(velocity)` – computes dynamic pressure at altitude.
+- `atm.geometric_height` – converts geopotential height to geometric height.
+- `atm.speed_of_sound` – sound speed at the specified altitude.
+
+## Testing
+
+Run the full **Pytest** test suite:
+
+```bash
+pytest -v tests/
+```
+
+Tests cover:
+
+- ICAO 1983 reference validation
+- Physical consistency (hydrostatic equilibrium, monotonicity)
+- Derived quantities (Mach, dynamic pressure, geometric height)
+- Unit system correctness and conversion
+
+## References
+
+- International Civil Aviation Organization (ICAO), 1983, *Standard Atmosphere Tables*
+- U.S. Standard Atmosphere, 1976, NASA
+
+## License
+
+MIT License. See LICENSE file for details.
+
+## Contributing
+
+Contributions are welcome! Follow **PEP 8** style, include tests for new features, and submit via GitHub Pull Requests.
+
+## Contact
+
+Author: Kolawole Andrew  
+GitHub: [https://github.com/techkaduna/isadora](https://github.com/techkaduna/isadora)  
+Email: andrewolakola@gmail.com

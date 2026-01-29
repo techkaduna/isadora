@@ -1,7 +1,7 @@
-.. figure:: https://github.com/techkaduna/isadora/blob/master/isadora.png
-   :alt: isadora logo
-
-   isadora logo
+.. image:: https://raw.githubusercontent.com/techkaduna/isadora/main/isadora.png
+   :alt: Isadora Logo
+   :width: 120px
+   :align: center
 
 ISADORA - ICAO 1983 Compliant International Standard Atmosphere (ISA)
 ====================================================================
@@ -9,7 +9,7 @@ ISADORA - ICAO 1983 Compliant International Standard Atmosphere (ISA)
 **Isadora** is a lightweight, precise, and Pythonic implementation of the
 International Standard Atmosphere (ISA) model. It provides **atmospheric properties**
 (temperature, pressure, density, dynamic and kinematic viscosity, speed of sound)
-at any geopotential altitude.  
+at any geopotential altitude.
 
 The package is fully **unit-aware**, supporting **SI**, **USCS**, and **Imperial** units, 
 and validated against ICAO 1983 reference tables.
@@ -30,7 +30,7 @@ Features
 Installation
 ------------
 
-Install via `pip`:
+Install via pip:
 
 .. code-block:: bash
 
@@ -48,9 +48,9 @@ Dependencies
 ------------
 
 - Python >= 3.10
-- `mudu` – unit and measurement library
-- `dataclasses` (Python 3.10+ has it built-in)
-- `pytest` – for running the test suite
+- mudu (unit and measurement library)
+- dataclasses (Python 3.10+ has it built-in)
+- pytest (for running the test suite)
 
 Quick Start
 -----------
@@ -76,7 +76,7 @@ Import the package and create an ISA atmosphere:
 Switching Units
 ---------------
 
-Change the global unit system using `UnitRegistry`:
+Change the global unit system using UnitRegistry:
 
 .. code-block:: python
 
@@ -92,17 +92,17 @@ Change the global unit system using `UnitRegistry`:
 Derived Quantities
 ------------------
 
-The `ISA` object provides convenient methods:
+The ISA object provides convenient methods:
 
-- `atm.mach_number(velocity)` – computes Mach number for a given velocity.
-- `atm.dynamic_pressure(velocity)` – computes dynamic pressure at altitude.
-- `atm.geometric_height` – converts geopotential height to geometric height.
-- `atm.speed_of_sound` – sound speed at the specified altitude.
+- atm.mach_number(velocity) -- computes Mach number for a given velocity.
+- atm.dynamic_pressure(velocity) -- computes dynamic pressure at altitude.
+- atm.geometric_height -- converts geopotential height to geometric height.
+- atm.speed_of_sound -- sound speed at the specified altitude.
 
 Testing
 -------
 
-Run the full **Pytest** test suite:
+Run the full Pytest test suite:
 
 .. code-block:: bash
 
@@ -114,7 +114,6 @@ Tests cover:
 - Physical consistency (hydrostatic equilibrium, monotonicity)
 - Derived quantities (Mach, dynamic pressure, geometric height)
 - Unit system correctness and conversion
-
 
 References
 ----------
@@ -130,12 +129,12 @@ MIT License. See LICENSE file for details.
 Contributing
 ------------
 
-Contributions are welcome! Follow **PEP 8** style, include tests for new features,
+Contributions are welcome! Follow PEP 8 style, include tests for new features,
 and submit via GitHub Pull Requests.
 
 Contact
 -------
 
 Author: Kolawole Andrew  
-GitHub: `https://github.com/techkaduna/isadora`  
-Email: `andrewolakola@gmail.com`
+GitHub: https://github.com/techkaduna/isadora  
+Email: andrewolakola@gmail.com
